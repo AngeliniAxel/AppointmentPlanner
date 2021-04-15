@@ -34,6 +34,10 @@ export const AppointmentForm = ({
 		setContact(target.value);
 	};
 
+	const getContactNames = () => {
+		return contacts.map((contact) => contact.name);
+	};
+
 	return (
 		<form onSubmit={handleSubmit}>
 			<input
@@ -44,7 +48,7 @@ export const AppointmentForm = ({
 				required
 			/>
 			<ContactPicker
-				contacts={contacts}
+				contacts={getContactNames()}
 				value={contact}
 				onChange={handleChangeContact}
 				placeholder='Appointment With'
