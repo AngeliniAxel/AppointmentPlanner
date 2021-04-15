@@ -15,13 +15,14 @@ export const ContactForm = ({ name, setName, phone, setPhone, email, setEmail, h
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input type='text' value={name} onChange={handleChangeName} placeholder='Name'></input>
+			<input type='text' value={name} onChange={handleChangeName} placeholder='Name' required />
 			<input
 				type='tel'
 				value={phone}
 				pattern='[0-9]{6}'
 				onChange={handleChangePhone}
-				placeholder='Phone'
+				placeholder='Phone (######)'
+				required
 			/>
 			<input type='email' value={email} onChange={handleChangeEmail} placeholder='Email' />
 			<input type='submit' />
